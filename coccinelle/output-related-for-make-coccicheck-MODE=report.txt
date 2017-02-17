@@ -1,0 +1,759 @@
+$sudo make coccicheck MODE=report
+
+Please check for false positives in the output before submitting a patch.
+When using "patch" mode, carefully review the patch before submitting it.
+
+./sound/pci/emu10k1/emufx.c:1189:19-28: WARNING: casting value returned by memory allocation function to (u_int32_t __user *) is useless.
+./sound/pci/emu10k1/emufx.c:1827:19-28: WARNING: casting value returned by memory allocation function to (u_int32_t __user *) is useless.
+./fs/9p/vfs_inode.c:241:12-29: WARNING: casting value returned by memory allocation function to (struct v9fs_inode *) is useless.
+./fs/proc/inode.c:60:7-24: WARNING: casting value returned by memory allocation function to (struct proc_inode *) is useless.
+./fs/ncpfs/inode.c:55:7-28: WARNING: casting value returned by memory allocation function to (struct ncp_inode_info *) is useless.
+./drivers/gpu/drm/amd/powerplay/hwmgr/hwmgr.c:533:18-59: WARNING: casting value returned by memory allocation function to (struct phm_clock_voltage_dependency_table *) is useless.
+./drivers/gpu/drm/amd/powerplay/hwmgr/tonga_hwmgr.c:3264:18-59: WARNING: casting value returned by memory allocation function to (struct phm_clock_voltage_dependency_table *) is useless.
+./drivers/gpu/drm/amd/powerplay/hwmgr/tonga_processpptables.c:330:10-32: WARNING: casting value returned by memory allocation function to (struct phm_clock_array *) is useless.
+./drivers/gpu/drm/amd/powerplay/hwmgr/tonga_processpptables.c:380:15-56: WARNING: casting value returned by memory allocation function to (phm_ppt_v1_clock_voltage_dependency_table *) is useless.
+./drivers/gpu/drm/amd/powerplay/hwmgr/tonga_processpptables.c:427:16-57: WARNING: casting value returned by memory allocation function to (phm_ppt_v1_clock_voltage_dependency_table *) is useless.
+./drivers/gpu/drm/amd/powerplay/hwmgr/tonga_processpptables.c:459:16-57: WARNING: casting value returned by memory allocation function to (phm_ppt_v1_clock_voltage_dependency_table *) is useless.
+./drivers/gpu/drm/amd/powerplay/hwmgr/tonga_processpptables.c:698:13-57: WARNING: casting value returned by memory allocation function to (phm_ppt_v1_mm_clock_voltage_dependency_table *) is useless.
+./drivers/gpu/drm/amd/powerplay/hwmgr/tonga_processpptables.c:507:16-37: WARNING: casting value returned by memory allocation function to (phm_ppt_v1_pcie_table *) is useless.
+./drivers/gpu/drm/amd/powerplay/hwmgr/tonga_processpptables.c:544:16-37: WARNING: casting value returned by memory allocation function to (phm_ppt_v1_pcie_table *) is useless.
+./drivers/gpu/drm/amd/powerplay/hwmgr/tonga_processpptables.c:170:10-41: WARNING: casting value returned by memory allocation function to (phm_ppt_v1_voltage_lookup_table *) is useless.
+./drivers/scsi/hpsa.c:6506:8-32: WARNING: casting value returned by memory allocation function to (BIG_IOCTL_Command_struct *) is useless.
+./drivers/block/cciss_scsi.c:706:9-41: WARNING: casting value returned by memory allocation function to (struct cciss_scsi_adapter_data_t *) is useless.
+./drivers/ata/sata_mv.c:1730:10-11: WARNING: *_pool_zalloc should be used for pp -> crqb, instead of *_pool_alloc/memset
+./drivers/ata/sata_mv.c:1735:10-11: WARNING: *_pool_zalloc should be used for pp -> crpb, instead of *_pool_alloc/memset
+./drivers/dma/zx296702_dma.c:438:13-14: WARNING: *_pool_zalloc should be used for ds -> desc_hw, instead of *_pool_alloc/memset
+./drivers/dma/xilinx/xilinx_vdma.c:516:9-10: WARNING: *_pool_zalloc should be used for segment, instead of *_pool_alloc/memset
+./drivers/dma/xilinx/xilinx_vdma.c:494:9-10: WARNING: *_pool_zalloc should be used for segment, instead of *_pool_alloc/memset
+./drivers/net/ethernet/mellanox/mlx4/cmd.c:2639:14-15: WARNING: *_pool_zalloc should be used for mailbox -> buf, instead of *_pool_alloc/memset
+./drivers/net/ethernet/mellanox/mlx5/core/cmd.c:931:14-15: WARNING: *_pool_zalloc should be used for mailbox -> buf, instead of *_pool_alloc/memset
+./drivers/net/ethernet/intel/e100.c:1913:10-11: WARNING: *_pool_zalloc should be used for nic -> cbs, instead of *_pool_alloc/memset
+./drivers/scsi/pmcraid.c:4787:33-34: WARNING: *_pool_zalloc should be used for pinstance -> cmd_list [ i ] -> ioa_cb, instead of *_pool_alloc/memset
+./drivers/scsi/mvsas/mv_sas.c:793:11-12: WARNING: *_pool_zalloc should be used for slot -> buf, instead of *_pool_alloc/memset
+./drivers/scsi/ipr.c:9462:10-11: WARNING: *_pool_zalloc should be used for ipr_cmd, instead of *_pool_alloc/memset
+./drivers/scsi/hisi_sas/hisi_sas_main.c:256:21-22: WARNING: *_pool_zalloc should be used for slot -> status_buffer, instead of *_pool_alloc/memset
+./drivers/scsi/hisi_sas/hisi_sas_main.c:265:21-22: WARNING: *_pool_zalloc should be used for slot -> command_table, instead of *_pool_alloc/memset
+./drivers/scsi/aic94xx/aic94xx_hwi.c:1058:22-23: WARNING: *_pool_zalloc should be used for ascb -> dma_scb . vaddr, instead of *_pool_alloc/memset
+./drivers/scsi/qla4xxx/ql4_os.c:828:12-13: WARNING: *_pool_zalloc should be used for chap_table, instead of *_pool_alloc/memset
+./drivers/scsi/qla4xxx/ql4_mbx.c:1654:12-13: WARNING: *_pool_zalloc should be used for chap_table, instead of *_pool_alloc/memset
+./drivers/scsi/lpfc/lpfc_scsi.c:416:12-13: WARNING: *_pool_zalloc should be used for psb -> data, instead of *_pool_alloc/memset
+./drivers/scsi/lpfc/lpfc_scsi.c:824:12-13: WARNING: *_pool_zalloc should be used for psb -> data, instead of *_pool_alloc/memset
+./drivers/scsi/qla2xxx/qla_bsg.c:1100:4-5: WARNING: *_pool_zalloc should be used for mn, instead of *_pool_alloc/memset
+./drivers/scsi/qla2xxx/qla_mbx.c:2973:5-6: WARNING: *_pool_zalloc should be used for tsk, instead of *_pool_alloc/memset
+./drivers/scsi/qla2xxx/qla_mbx.c:2895:5-6: WARNING: *_pool_zalloc should be used for abt, instead of *_pool_alloc/memset
+./drivers/scsi/qla2xxx/qla_mbx.c:3786:5-6: WARNING: *_pool_zalloc should be used for vce, instead of *_pool_alloc/memset
+./drivers/scsi/qla2xxx/qla_mbx.c:2402:4-5: WARNING: *_pool_zalloc should be used for lg, instead of *_pool_alloc/memset
+./drivers/scsi/qla2xxx/qla_mbx.c:2132:4-5: WARNING: *_pool_zalloc should be used for lg, instead of *_pool_alloc/memset
+./drivers/scsi/qla2xxx/qla_mbx.c:3708:7-8: WARNING: *_pool_zalloc should be used for vpmod, instead of *_pool_alloc/memset
+./drivers/scsi/qla2xxx/qla_mbx.c:2700:6-7: WARNING: *_pool_zalloc should be used for pmap, instead of *_pool_alloc/memset
+./drivers/scsi/qla2xxx/qla_mbx.c:1664:4-5: WARNING: *_pool_zalloc should be used for pd, instead of *_pool_alloc/memset
+./drivers/scsi/mpt3sas/mpt3sas_base.c:3363:37-38: WARNING: *_pool_zalloc should be used for ioc -> reply_post [ i ] . reply_post_free, instead of *_pool_alloc/memset
+./drivers/scsi/mpt3sas/mpt3sas_base.c:3594:17-18: WARNING: *_pool_zalloc should be used for ioc -> reply_free, instead of *_pool_alloc/memset
+./mm/huge_memory.c:3515:0-23: WARNING: split_huge_pages_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./mm/cma_debug.c:162:0-23: WARNING: cma_alloc_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./mm/cma_debug.c:33:0-23: WARNING: cma_debugfs_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./mm/cma_debug.c:130:0-23: WARNING: cma_free_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./mm/cma_debug.c:70:0-23: WARNING: cma_maxchunk_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./mm/cma_debug.c:48:0-23: WARNING: cma_used_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/hsi/controllers/omap_ssi_port.c:174:0-23: WARNING: ssi_sst_div_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./mm/hwpoison-inject.c:70:0-23: WARNING: hwpoison_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./mm/hwpoison-inject.c:71:0-23: WARNING: unpoison_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/input/touchscreen/edt-ft5x06.c:633:0-23: WARNING: debugfs_mode_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./mm/memory.c:2925:0-23: WARNING: fault_around_bytes_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/power/avs/smartreflex.c:839:0-23: WARNING: pm_sr_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./lib/fault-inject.c:178:0-23: WARNING: fops_stacktrace_depth should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./lib/fault-inject.c:160:0-23: WARNING: fops_ul should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./lib/notifier-error-inject.c:17:0-23: WARNING: fops_errno should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/memory/tegra/tegra124-emc.c:1027:0-23: WARNING: emc_debug_rate_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/mmc/core/debugfs.c:233:0-23: WARNING: mmc_clock_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/mmc/core/debugfs.c:297:0-23: WARNING: mmc_dbg_card_status_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/6lowpan/debugfs.c:44:0-23: WARNING: lowpan_ctx_flag_active_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/6lowpan/debugfs.c:69:0-23: WARNING: lowpan_ctx_flag_c_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/6lowpan/debugfs.c:100:0-23: WARNING: lowpan_ctx_plen_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/blackfin/kernel/debug-mmrs.c:75:0-23: WARNING: fops_debug_cclk should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/blackfin/kernel/debug-mmrs.c:82:0-23: WARNING: fops_debug_sclk should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/6lowpan.c:1223:0-23: WARNING: lowpan_enable_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/x86/platform/intel/iosf_mbi.c:229:0-23: WARNING: iosf_mcr_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:1015:0-23: WARNING: adv_channel_map_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:1071:0-23: WARNING: adv_max_interval_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:1043:0-23: WARNING: adv_min_interval_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:527:0-23: WARNING: auto_accept_delay_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:313:0-23: WARNING: conn_info_max_age_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:285:0-23: WARNING: conn_info_min_age_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:959:0-23: WARNING: conn_latency_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:931:0-23: WARNING: conn_max_interval_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:903:0-23: WARNING: conn_min_interval_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:555:0-23: WARNING: idle_timeout_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:700:0-23: WARNING: rpa_timeout_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:611:0-23: WARNING: sniff_max_interval_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:583:0-23: WARNING: sniff_min_interval_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:987:0-23: WARNING: supervision_timeout_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./net/bluetooth/hci_debugfs.c:484:0-23: WARNING: voice_setting_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/acpi/apei/einj.c:672:0-23: WARNING: error_inject_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/acpi/apei/einj.c:660:0-23: WARNING: error_type_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/x86/kernel/cpu/mcheck/mce.c:2658:0-23: WARNING: fake_panic_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/mips/kernel/spinlock_test.c:116:0-23: WARNING: fops_multi should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/mips/kernel/spinlock_test.c:37:0-23: WARNING: fops_ss should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/mips/cavium-octeon/oct_ilm.c:64:0-23: WARNING: reset_statistics_ops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/staging/android/ion/ion.c:1584:0-23: WARNING: debug_shrink_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/misc/cxl/debugfs.c:46:0-23: WARNING: fops_io_x64 should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/powerpc/kernel/eeh.c:1783:0-23: WARNING: eeh_enable_dbgfs_ops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/powerpc/kernel/eeh.c:1785:0-23: WARNING: eeh_freeze_dbgfs_ops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/cpufreq/intel_pstate.c:614:0-23: WARNING: fops_pid_param should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/powerpc/platforms/cell/axon_msi.c:466:0-23: WARNING: fops_msic should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/avr32/kernel/ocd.c:103:0-23: WARNING: fops_DC should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/avr32/kernel/ocd.c:110:0-23: WARNING: fops_DS should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/avr32/kernel/ocd.c:117:0-23: WARNING: fops_count should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/arm/mach-omap2/pm-debug.c:254:0-23: WARNING: pm_dbg_option_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./arch/arm/mach-omap2/pm-debug.c:200:0-23: WARNING: pwrdm_suspend_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/clk/tegra/clk-dfll.c:1119:0-23: WARNING: enable_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/clk/tegra/clk-dfll.c:1136:0-23: WARNING: lock_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/clk/tegra/clk-dfll.c:1154:0-23: WARNING: rate_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./fs/ocfs2/blockcheck.c:240:0-23: WARNING: blockcheck_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./fs/ceph/debugfs.c:221:0-23: WARNING: congestion_kb_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/iio/gyro/adis16136.c:145:0-23: WARNING: adis16136_flash_count_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/iio/gyro/adis16136.c:127:0-23: WARNING: adis16136_product_id_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/iio/imu/adis16480.c:233:0-23: WARNING: adis16480_flash_count_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/iio/imu/adis16480.c:215:0-23: WARNING: adis16480_product_id_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/iio/imu/adis16480.c:197:0-23: WARNING: adis16480_serial_number_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/iio/imu/adis16400_core.c:105:0-23: WARNING: adis16400_flash_count_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/iio/imu/adis16400_core.c:88:0-23: WARNING: adis16400_product_id_fops should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/hwmon/asus_atk0110.c:688:0-23: WARNING: atk_debugfs_gitm should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/net/wireless/mac80211_hwsim.c:758:0-23: WARNING: hwsim_fops_group should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/net/wireless/mac80211_hwsim.c:729:0-23: WARNING: hwsim_fops_ps should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/net/wireless/mac80211_hwsim.c:741:0-23: WARNING: hwsim_simulate_radar should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/net/wireless/mediatek/mt7601u/debugfs.c:38:0-23: WARNING: fops_regval should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/net/wireless/ath/wil6210/debugfs.c:283:0-23: WARNING: fops_iomem_x32 should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/net/wireless/ath/wil6210/debugfs.c:307:0-23: WARNING: wil_fops_ulong should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/net/wimax/i2400m/debugfs.c:218:0-23: WARNING: fops_i2400m_reset should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/net/wimax/i2400m/debugfs.c:180:0-23: WARNING: fops_i2400m_suspend should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/net/wimax/i2400m/debugfs.c:43:0-23: WARNING: fops_netdev_queue_stopped should be defined with DEFINE_DEBUGFS_ATTRIBUTE
+./drivers/gpu/drm/mediatek/mtk_drm_gem.c:249:9-16: WARNING: ERR_CAST can be used with mtk_gem
+./drivers/mmc/card/block.c:363:14-21: WARNING opportunity for memdup_user
+./include/rdma/ib_verbs.h:2033:7-14: WARNING opportunity for memdup_user
+./sound/core/compress_offload.c:532:11-18: WARNING opportunity for memdup_user
+./security/smack/smackfs.c:2526:8-15: WARNING opportunity for memdup_user
+./arch/s390/kvm/guestdbg.c:220:11-18: WARNING opportunity for memdup_user
+./fs/xattr.c:322:11-18: WARNING opportunity for memdup_user
+./drivers/staging/lustre/lustre/llite/dir.c:1079:8-15: WARNING opportunity for memdup_user
+./drivers/staging/lustre/lustre/llite/dir.c:1692:9-16: WARNING opportunity for memdup_user
+./drivers/misc/vmw_vmci/vmci_host.c:762:11-18: WARNING opportunity for memdup_user
+./drivers/misc/vmw_vmci/vmci_host.c:384:6-13: WARNING opportunity for memdup_user
+./drivers/misc/mic/vop/vop_vringh.c:941:14-21: WARNING opportunity for memdup_user
+./drivers/misc/mic/vop/vop_vringh.c:999:8-15: WARNING opportunity for memdup_user
+./drivers/s390/char/tape_3590.c:315:13-20: WARNING opportunity for memdup_user
+./drivers/s390/char/keyboard.c:441:6-13: WARNING opportunity for memdup_user
+./drivers/infiniband/hw/qib/qib_fs.c:341:7-14: WARNING opportunity for memdup_user
+./drivers/gpu/drm/virtio/virtgpu_ioctl.c:155:7-14: WARNING opportunity for memdup_user
+./drivers/gpu/drm/savage/savage_state.c:1004:13-20: WARNING opportunity for memdup_user
+./drivers/usb/misc/iowarrior.c:371:8-15: WARNING opportunity for memdup_user
+./drivers/net/tun.c:718:8-15: WARNING opportunity for memdup_user
+./drivers/net/wan/cosa.c:879:8-15: WARNING opportunity for memdup_user
+./drivers/net/wan/lmc/lmc_main.c:497:27-34: WARNING opportunity for memdup_user
+./drivers/net/ethernet/mellanox/mlx5/core/cmd.c:1027:7-14: WARNING opportunity for memdup_user
+./drivers/net/wireless/intersil/hostap/hostap_ioctl.c:3044:9-16: WARNING opportunity for memdup_user
+./drivers/net/wireless/intersil/hostap/hostap_ioctl.c:3806:9-16: WARNING opportunity for memdup_user
+./drivers/scsi/aacraid/commctrl.c:529:15-22: WARNING opportunity for memdup_user
+./drivers/scsi/megaraid/megaraid_sas_base.c:6714:7-14: WARNING opportunity for memdup_user
+./drivers/tty/vt/keyboard.c:1736:9-16: WARNING opportunity for memdup_user
+./drivers/ide/ide-taskfile.c:497:11-18: WARNING opportunity for memdup_user
+./drivers/ide/ide-taskfile.c:510:10-17: WARNING opportunity for memdup_user
+./drivers/media/usb/uvc/uvc_v4l2.c:73:19-26: WARNING opportunity for memdup_user
+./drivers/media/dvb-core/dvb_frontend.c:1954:8-15: WARNING opportunity for memdup_user
+./drivers/media/dvb-core/dvb_frontend.c:1987:8-15: WARNING opportunity for memdup_user
+./drivers/block/cciss.c:1590:7-14: WARNING opportunity for memdup_user
+./sound/soc/codecs/max98371.c:428:3-8: No need to set .owner here. The core will do it.
+./sound/soc/codecs/pcm5102a.c:60:3-8: No need to set .owner here. The core will do it.
+./drivers/uio/uio_fsl_elbc_gpcm.c:478:3-8: No need to set .owner here. The core will do it.
+./drivers/mtd/maps/pismo.c:268:3-8: No need to set .owner here. The core will do it.
+./drivers/mailbox/hi6220-mailbox.c:374:3-8: No need to set .owner here. The core will do it.
+./drivers/thermal/int340x_thermal/int3406_thermal.c:228:6-11: No need to set .owner here. The core will do it.
+./drivers/regulator/rk808-regulator.c:537:3-8: No need to set .owner here. The core will do it.
+./drivers/cpufreq/scpi-cpufreq.c:108:3-8: No need to set .owner here. The core will do it.
+./drivers/irqchip/irq-mbigen.c:296:3-8: No need to set .owner here. The core will do it.
+./drivers/watchdog/pic32-wdt.c:254:3-8: No need to set .owner here. The core will do it.
+./drivers/media/radio/si470x/radio-si470x-i2c.c:512:3-8: No need to set .owner here. The core will do it.
+./drivers/watchdog/asm9260_wdt.c:392:3-8: No need to set .owner here. The core will do it.
+./drivers/media/i2c/tvp7002.c:1089:3-8: No need to set .owner here. The core will do it.
+./drivers/media/i2c/vs6624.c:866:3-8: No need to set .owner here. The core will do it.
+./drivers/media/i2c/ths8200.c:502:3-8: No need to set .owner here. The core will do it.
+./drivers/media/i2c/adv7183.c:647:3-8: No need to set .owner here. The core will do it.
+./drivers/media/i2c/adv7393.c:459:3-8: No need to set .owner here. The core will do it.
+./drivers/watchdog/pic32-dmt.c:248:3-8: No need to set .owner here. The core will do it.
+./drivers/media/i2c/s5k4ecgx.c:1022:3-8: No need to set .owner here. The core will do it.
+./drivers/media/i2c/tvp514x.c:1236:3-8: No need to set .owner here. The core will do it.
+./drivers/media/i2c/cs3308.c:130:3-8: No need to set .owner here. The core will do it.
+./drivers/media/i2c/tlv320aic23b.c:213:3-8: No need to set .owner here. The core will do it.
+./drivers/media/i2c/s5k6a3.c:379:3-8: No need to set .owner here. The core will do it.
+./drivers/media/i2c/ad9389b.c:1234:3-8: No need to set .owner here. The core will do it.
+./drivers/macintosh/ams/ams-i2c.c:76:3-8: No need to set .owner here. The core will do it.
+./drivers/macintosh/windfarm_pm112.c:671:3-8: No need to set .owner here. The core will do it.
+./drivers/macintosh/windfarm_rm31.c:685:3-8: No need to set .owner here. The core will do it.
+./drivers/macintosh/windfarm_pm72.c:792:3-8: No need to set .owner here. The core will do it.
+./drivers/gpio/gpio-stmpe.c:419:3-8: No need to set .owner here. The core will do it.
+./drivers/clk/qcom/gcc-ipq4019.c:1335:3-8: No need to set .owner here. The core will do it.
+./drivers/power/z2_battery.c:320:3-8: No need to set .owner here. The core will do it.
+./drivers/nfc/pn533/i2c.c:268:6-11: No need to set .owner here. The core will do it.
+./drivers/nfc/nfcmrvl/i2c.c:281:3-8: No need to set .owner here. The core will do it.
+./drivers/nfc/s3fwrn5/i2c.c:293:3-8: No need to set .owner here. The core will do it.
+./drivers/gpu/drm/bridge/dw-hdmi-ahb-audio.c:643:3-8: No need to set .owner here. The core will do it.
+./drivers/gpu/drm/rockchip/analogix_dp-rockchip.c:379:6-11: No need to set .owner here. The core will do it.
+./drivers/platform/goldfish/goldfish_pipe.c:664:3-8: No need to set .owner here. The core will do it.
+./drivers/video/backlight/tosa_bl.c:166:3-8: No need to set .owner here. The core will do it.
+./drivers/rtc/rtc-asm9260.c:346:3-8: No need to set .owner here. The core will do it.
+./drivers/rtc/rtc-pic32.c:403:3-8: No need to set .owner here. The core will do it.
+./drivers/hwmon/scpi-hwmon.c:258:3-8: No need to set .owner here. The core will do it.
+./drivers/dma/fsl_raid.c:893:3-8: No need to set .owner here. The core will do it.
+./drivers/net/fjes/fjes_main.c:100:3-8: No need to set .owner here. The core will do it.
+./drivers/net/ethernet/mediatek/mtk_eth_soc.c:1872:3-8: No need to set .owner here. The core will do it.
+./arch/mips/pci/pci-mt7620.c:416:3-8: No need to set .owner here. The core will do it.
+./arch/powerpc/platforms/83xx/mcu_mpc8349emitx.c:225:3-8: No need to set .owner here. The core will do it.
+./arch/powerpc/platforms/512x/mpc512x_lpbfifo.c:531:3-8: No need to set .owner here. The core will do it.
+./arch/arm/mach-s3c64xx/mach-crag6410-module.c:397:3-8: No need to set .owner here. The core will do it.
+./arch/arm/mach-zx/zx296702-pm-domain.c:192:3-8: No need to set .owner here. The core will do it.
+./drivers/char/hw_random/pic32-rng.c:146:3-8: No need to set .owner here. The core will do it.
+./mm/page_owner.c:403:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/hwtracing/intel_th/pci.c:46:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/hwtracing/coresight/coresight-tpiu.c:167:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/hwtracing/coresight/coresight-funnel.c:221:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pnp/pnpbios/core.c:583:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/video/fbdev/omap2/omapfb/dss/hdmi4.c:684:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./include/linux/err.h:58:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./arch/x86/platform/olpc/olpc.c:314:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./arch/x86/kernel/pcspeaker.c:11:8-14: WARNING: PTR_ERR_OR_ZERO can be used
+./arch/mips/mm/sc-debugfs.c:76:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./arch/powerpc/sysdev/fsl_pci.c:1310:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./arch/arm/mach-davinci/dm646x.c:952:8-14: WARNING: PTR_ERR_OR_ZERO can be used
+./arch/arm/mach-davinci/devices-da8xx.c:262:8-14: WARNING: PTR_ERR_OR_ZERO can be used
+./arch/arm/mach-davinci/devices-da8xx.c:307:8-14: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/dca/dca-sysfs.c:43:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./fs/sysfs/group.c:409:8-14: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/misc/vexpress-syscfg.c:273:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/misc/mic/scif/scif_epd.h:168:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/virtio/virtio_mmio.c:630:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/phy/phy-ti-pipe3.c:540:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/phy/phy-ti-pipe3.c:595:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/phy/tegra/xusb.c:562:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/phy/tegra/xusb.c:732:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./fs/nfs/nfs42proc.c:404:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pinctrl/sh-pfc/pinctrl.c:806:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/clk/sunxi/clk-sun8i-apb0.c:101:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/infiniband/core/uverbs_cmd.c:1533:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/sun4i/sun4i_dotclock.c:179:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/tegra/drm.c:452:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/tegra/gem.c:392:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/omapdrm/dss/hdmi4.c:677:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/gpu/drm/fsl-dcu/fsl_tcon.c:60:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/nvdimm/claim.c:269:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/rtc/rtc-digicolor.c:205:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/ata/pata_at91.c:350:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/dma/mic_x100_dma.c:485:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/net/ethernet/mellanox/mlx5/core/fs_core.c:1808:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/net/ethernet/mellanox/mlx5/core/fs_core.c:1824:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/net/appletalk/ipddp.c:315:8-10: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/scsi/qla2xxx/tcm_qla2xxx.c:1475:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/crypto/mv_cesa.c:1054:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/crypto/marvell/tdma.c:176:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/crypto/qce/ablkcipher.c:246:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/tty/serial/8250/8250_mtk.c:178:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/tty/serial/mxs-auart.c:1513:2-4: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/firmware/qemu_fw_cfg.c:696:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/firmware/efi/efi.c:460:8-14: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pwm/pwm-sti.c:287:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pcmcia/at91_cf.c:239:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/thermal/cpu_cooling.c:447:18-24: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/thermal/devfreq_cooling.c:237:15-21: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pci/host/pcie-qcom.c:178:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pci/host/pcie-qcom.c:210:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pci/host/pci-tegra.c:1168:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+./drivers/pcmcia/yenta_socket.c:638:30-33: WARNING: Suspicious code. resource_size is maybe missing with root
+./drivers/irqchip/irq-imgpdc.c:327:20-23: WARNING: Suspicious code. resource_size is maybe missing with res_regs
+./drivers/media/platform/sti/c8sectpfe/c8sectpfe-core.c:695:23-26: WARNING: Suspicious code. resource_size is maybe missing with res
+./drivers/macintosh/macio_asic.c:225:26-29: WARNING: Suspicious code. resource_size is maybe missing with res
+./drivers/macintosh/macio_asic.c:227:26-29: WARNING: Suspicious code. resource_size is maybe missing with res
+./drivers/mfd/kempld-core.c:461:13-16: WARNING: Suspicious code. resource_size is maybe missing with ioport
+./drivers/mfd/syscon.c:218:35-38: WARNING: Suspicious code. resource_size is maybe missing with res
+./arch/ia64/sn/kernel/io_init.c:184:14-17: WARNING: Suspicious code. resource_size is maybe missing with res
+./drivers/platform/x86/apple-gmux.c:628:25-28: WARNING: Suspicious code. resource_size is maybe missing with res
+./drivers/bluetooth/hci_bcsp.c:716:1-11: Use setup_timer function for function on line 717.
+./drivers/bluetooth/hci_h5.c:207:1-11: Use setup_timer function for function on line 208.
+./drivers/bluetooth/hci_qca.c:441:1-11: Use setup_timer function for function on line 442.
+./drivers/bluetooth/hci_qca.c:446:1-11: Use setup_timer function for function on line 447.
+./drivers/nfc/pn533/pn533.c:2602:1-11: Use setup_timer function for function on line 2603.
+./drivers/nfc/st-nci/ndlc.c:285:1-11: Use setup_timer function for function on line 286.
+./drivers/nfc/st-nci/ndlc.c:289:1-11: Use setup_timer function for function on line 290.
+./drivers/nfc/st-nci/se.c:728:1-11: Use setup_timer function for function on line 729.
+./drivers/nfc/st-nci/se.c:733:1-11: Use setup_timer function for function on line 734.
+./drivers/nfc/st21nfca/se.c:395:1-11: Use setup_timer function for function on line 396.
+./drivers/nfc/st21nfca/se.c:400:1-11: Use setup_timer function for function on line 401.
+./drivers/video/fbdev/aty/radeon_base.c:2294:1-11: Use setup_timer function for function on line 2295.
+./net/packet/af_packet.c:542:1-11: Use setup_timer function for function on line 543.
+./drivers/video/fbdev/omap2/omapfb/dss/dsi.c:5309:1-11: Use setup_timer function for function on line 5310.
+./drivers/video/fbdev/omap/hwa742.c:1005:1-11: Use setup_timer function for function on line 1006.
+./drivers/video/fbdev/pxa3xx-gcu.c:523:1-11: Use setup_timer function for function on line 524.
+./net/netfilter/ipset/ip_set_list_set.c:573:1-11: Use setup_timer function for function on line 574.
+./net/netfilter/ipset/ip_set_bitmap_gen.h:43:1-11: Use setup_timer function for function on line 44.
+./net/netfilter/ipset/ip_set_hash_gen.h:447:1-11: Use setup_timer function for function on line 448.
+./drivers/video/console/fbcon.c:418:2-12: Use setup_timer function for function on line 419.
+./drivers/target/iscsi/iscsi_target_login.c:858:1-11: Use setup_timer function for function on line 860.
+./drivers/target/iscsi/iscsi_target_erl0.c:812:1-11: Use setup_timer function for function on line 815.
+./drivers/target/iscsi/iscsi_target_util.c:1047:1-11: Use setup_timer function for function on line 1049.
+./drivers/target/iscsi/iscsi_target_util.c:981:1-11: Use setup_timer function for function on line 984.
+./drivers/target/iscsi/iscsi_target_util.c:1075:1-11: Use setup_timer function for function on line 1077.
+./drivers/target/iscsi/iscsi_target_erl1.c:1266:1-11: Use setup_timer function for function on line 1268.
+./drivers/target/iscsi/iscsi_target_nego.c:572:1-11: Use setup_timer function for function on line 574.
+./drivers/i2c/busses/i2c-img-scb.c:1365:1-11: Use setup_timer function for function on line 1366.
+./drivers/mmc/host/via-sdmmc.c:1038:1-11: Use setup_timer function for function on line 1039.
+./net/core/drop_monitor.c:388:2-12: Use setup_timer function for function on line 389.
+./drivers/mmc/host/vub300.c:2331:1-11: Use setup_timer function for function on line 2332.
+./drivers/mmc/host/vub300.c:2335:1-11: Use setup_timer function for function on line 2336.
+./net/nfc/llcp_core.c:1577:1-11: Use setup_timer function for function on line 1578.
+./net/nfc/llcp_core.c:1605:1-11: Use setup_timer function for function on line 1606.
+./drivers/mmc/host/wbsd.c:1229:1-11: Use setup_timer function for function on line 1230.
+./net/nfc/hci/llc_shdlc.c:766:1-11: Use setup_timer function for function on line 767.
+./net/nfc/hci/llc_shdlc.c:770:1-11: Use setup_timer function for function on line 771.
+./net/nfc/hci/llc_shdlc.c:774:1-11: Use setup_timer function for function on line 775.
+./net/nfc/hci/core.c:1007:1-11: Use setup_timer function for function on line 1008.
+./drivers/mmc/host/mxcmmc.c:1158:1-11: Use setup_timer function for function on line 1159.
+./net/nfc/core.c:1085:2-12: Use setup_timer function for function on line 1086.
+./kernel/time/clocksource.c:285:1-11: Use setup_timer function for function on line 286.
+./arch/blackfin/kernel/nmi.c:182:1-11: Use setup_timer function for function on line 183.
+./drivers/staging/i4l/icn/icn.c:983:4-14: Use setup_timer function for function on line 985.
+./drivers/staging/i4l/icn/icn.c:990:5-15: Use setup_timer function for function on line 992.
+./arch/ia64/kernel/salinfo.c:669:1-11: Use setup_timer function for function on line 671.
+./drivers/staging/i4l/pcbit/drv.c:362:3-13: Use setup_timer function for function on line 363.
+./drivers/staging/i4l/pcbit/drv.c:807:1-11: Use setup_timer function for function on line 809.
+./arch/ia64/sn/kernel/bte.c:439:1-11: Use setup_timer function for function on line 440.
+./arch/ia64/sn/kernel/mca.c:83:1-11: Use setup_timer function for function on line 85.
+./drivers/staging/i4l/pcbit/layer2.c:648:2-12: Use setup_timer function for function on line 649.
+./drivers/staging/i4l/pcbit/edss1.c:301:2-12: Use setup_timer function for function on line 302.
+./drivers/staging/lustre/lnet/lnet/net_fault.c:763:1-11: Use setup_timer function for function on line 764.
+./arch/x86/kernel/pci-calgary_64.c:1010:1-11: Use setup_timer function for function on line 1011.
+./arch/um/drivers/net_kern.c:469:1-11: Use setup_timer function for function on line 471.
+./drivers/misc/sgi-xp/xpc_main.c:934:2-12: Use setup_timer function for function on line 935.
+./arch/mips/lasat/picvue_proc.c:199:1-11: Use setup_timer function for function on line 200.
+./arch/powerpc/oprofile/op_model_cell.c:682:1-11: Use setup_timer function for function on line 683.
+./arch/powerpc/oprofile/op_model_cell.c:558:1-11: Use setup_timer function for function on line 559.
+./arch/powerpc/kernel/tau_6xx.c:232:1-11: Use setup_timer function for function on line 233.
+./arch/powerpc/platforms/powermac/low_i2c.c:515:1-11: Use setup_timer function for function on line 516.
+./arch/arm/mach-footbridge/dc21285.c:326:1-11: Use setup_timer function for function on line 329.
+./arch/arm/mach-footbridge/dc21285.c:327:1-11: Use setup_timer function for function on line 331.
+./arch/arm/mach-iop32x/n2100.c:339:1-11: Use setup_timer function for function on line 340.
+./arch/sh/drivers/push-switch.c:81:1-11: Use setup_timer function for function on line 83.
+./arch/sh/drivers/pci/common.c:108:2-12: Use setup_timer function for function on line 109.
+./arch/sh/drivers/pci/common.c:114:2-12: Use setup_timer function for function on line 115.
+./drivers/isdn/i4l/isdn_ppp.c:2373:2-12: Use setup_timer function for function on line 2374.
+./arch/xtensa/platforms/iss/network.c:389:1-11: Use setup_timer function for function on line 391.
+./drivers/isdn/i4l/isdn_tty.c:1814:2-12: Use setup_timer function for function on line 1815.
+./block/cfq-iosched.c:4589:1-11: Use setup_timer function for function on line 4590.
+./drivers/isdn/i4l/isdn_common.c:2314:1-11: Use setup_timer function for function on line 2315.
+./fs/ocfs2/cluster/tcp.c:452:1-11: Use setup_timer function for function on line 453.
+./drivers/isdn/i4l/isdn_net.c:1618:1-11: Use setup_timer function for function on line 1619.
+./drivers/isdn/isdnloop/isdnloop.c:1116:1-11: Use setup_timer function for function on line 1118.
+./drivers/isdn/isdnloop/isdnloop.c:620:1-11: Use setup_timer function for function on line 623.
+./drivers/isdn/isdnloop/isdnloop.c:620:1-11: Use setup_timer function for function on line 625.
+./fs/ncpfs/inode.c:622:1-11: Use setup_timer function for function on line 654.
+./drivers/isdn/hisax/hfc4s8s_l1.c:1401:2-12: Use setup_timer function for function on line 1399.
+./drivers/isdn/hisax/hfc_usb.c:1168:1-11: Use setup_timer function for function on line 1169.
+./drivers/isdn/hisax/hfc_usb.c:1173:1-11: Use setup_timer function for function on line 1174.
+./drivers/isdn/hardware/mISDN/hfcmulti.c:3883:3-13: Use setup_timer function for function on line 3989.
+./drivers/isdn/hardware/eicon/divasi.c:303:1-11: Use setup_timer function for function on line 304.
+./drivers/isdn/divert/isdn_divert.c:160:1-11: Use setup_timer function for function on line 162.
+./drivers/isdn/divert/isdn_divert.c:455:3-13: Use setup_timer function for function on line 457.
+./drivers/s390/net/fsm.c:173:1-11: Use setup_timer function for function on line 174.
+./drivers/s390/net/fsm.c:194:1-11: Use setup_timer function for function on line 195.
+./drivers/s390/char/sclp_tty.c:221:2-12: Use setup_timer function for function on line 222.
+./drivers/s390/char/tape_core.c:384:1-11: Use setup_timer function for function on line 385.
+./drivers/s390/char/sclp_con.c:213:2-12: Use setup_timer function for function on line 214.
+./drivers/s390/scsi/zfcp_erp.c:575:1-11: Use setup_timer function for function on line 576.
+./drivers/s390/block/dasd.c:166:1-11: Use setup_timer function for function on line 167.
+./drivers/s390/block/dasd.c:122:1-11: Use setup_timer function for function on line 123.
+./drivers/infiniband/hw/i40iw/i40iw_cm.c:3162:1-11: Use setup_timer function for function on line 3163.
+./drivers/infiniband/hw/i40iw/i40iw_utils.c:1259:1-11: Use setup_timer function for function on line 1260.
+./drivers/infiniband/hw/mthca/mthca_catas.c:152:1-11: Use setup_timer function for function on line 167.
+./drivers/infiniband/hw/nes/nes_hw.c:1854:1-11: Use setup_timer function for function on line 1855.
+./drivers/infiniband/hw/nes/nes_mgt.c:1047:2-12: Use setup_timer function for function on line 1048.
+./drivers/infiniband/hw/nes/nes_cm.c:2676:1-11: Use setup_timer function for function on line 2677.
+./drivers/infiniband/hw/nes/nes_nic.c:1741:1-11: Use setup_timer function for function on line 1742.
+./drivers/infiniband/hw/nes/nes_verbs.c:1321:1-11: Use setup_timer function for function on line 1322.
+./drivers/infiniband/hw/qib/qib_mad.c:2485:1-11: Use setup_timer function for function on line 2486.
+./drivers/infiniband/hw/qib/qib_init.c:457:1-11: Use setup_timer function for function on line 458.
+./drivers/infiniband/hw/qib/qib_init.c:783:3-13: Use setup_timer function for function on line 784.
+./drivers/infiniband/hw/qib/qib_init.c:239:1-11: Use setup_timer function for function on line 240.
+./drivers/infiniband/hw/qib/qib_sd7220.c:1443:3-13: Use setup_timer function for function on line 1444.
+./drivers/infiniband/hw/qib/qib_iba7220.c:4083:1-11: Use setup_timer function for function on line 4084.
+./drivers/infiniband/hw/qib/qib_iba7220.c:4110:1-11: Use setup_timer function for function on line 4111.
+./drivers/infiniband/hw/qib/qib_iba6120.c:3304:1-11: Use setup_timer function for function on line 3305.
+./drivers/infiniband/hw/qib/qib_iba6120.c:3308:1-11: Use setup_timer function for function on line 3309.
+./drivers/infiniband/hw/qib/qib_driver.c:741:2-12: Use setup_timer function for function on line 742.
+./drivers/infiniband/hw/qib/qib_iba7322.c:6626:2-12: Use setup_timer function for function on line 6627.
+./drivers/infiniband/hw/qib/qib_iba7322.c:6654:1-11: Use setup_timer function for function on line 6655.
+./drivers/gpu/drm/omapdrm/dss/dsi.c:5298:1-11: Use setup_timer function for function on line 5299.
+./drivers/usb/phy/phy-isp1301-omap.c:1510:1-11: Use setup_timer function for function on line 1511.
+./drivers/usb/gadget/udc/omap_udc.c:2549:2-12: Use setup_timer function for function on line 2550.
+./drivers/usb/gadget/udc/pxa25x_udc.c:2420:1-11: Use setup_timer function for function on line 2421.
+./drivers/usb/gadget/udc/r8a66597-udc.c:1892:1-11: Use setup_timer function for function on line 1893.
+./drivers/usb/gadget/udc/dummy_hcd.c:2426:1-11: Use setup_timer function for function on line 2427.
+./drivers/usb/gadget/udc/dummy_hcd.c:2395:1-11: Use setup_timer function for function on line 2396.
+./drivers/usb/gadget/udc/m66592-udc.c:1607:1-11: Use setup_timer function for function on line 1608.
+./drivers/usb/gadget/udc/amd5536udc.c:3264:1-11: Use setup_timer function for function on line 3265.
+./drivers/usb/gadget/udc/amd5536udc.c:3268:1-11: Use setup_timer function for function on line 3269.
+./drivers/usb/atm/speedtch.c:879:1-11: Use setup_timer function for function on line 881.
+./drivers/usb/atm/speedtch.c:886:1-11: Use setup_timer function for function on line 887.
+./drivers/usb/atm/cxacru.c:574:1-11: Use setup_timer function for function on line 576.
+./drivers/usb/core/hcd.c:2560:1-11: Use setup_timer function for function on line 2561.
+./drivers/usb/serial/garmin_gps.c:1393:1-11: Use setup_timer function for function on line 1397.
+./drivers/dma/imx-dma.c:1153:3-13: Use setup_timer function for function on line 1154.
+./drivers/dma/ioat/init.c:754:1-11: Use setup_timer function for function on line 755.
+./drivers/net/caif/caif_hsi.c:1218:1-11: Use setup_timer function for function on line 1219.
+./drivers/net/caif/caif_hsi.c:1222:1-11: Use setup_timer function for function on line 1223.
+./drivers/net/caif/caif_hsi.c:1226:1-11: Use setup_timer function for function on line 1227.
+./drivers/net/wan/hdlc_cisco.c:296:1-11: Use setup_timer function for function on line 298.
+./drivers/net/wan/sdla.c:1620:1-11: Use setup_timer function for function on line 1622.
+./drivers/net/wan/lmc/lmc_main.c:1088:4-14: Use setup_timer function for function on line 1090.
+./drivers/net/wan/hdlc_fr.c:1006:2-12: Use setup_timer function for function on line 1009.
+./drivers/net/wan/hdlc_ppp.c:613:2-12: Use setup_timer function for function on line 614.
+./drivers/net/wan/dscc4.c:1120:8-18: Use setup_timer function for function on line 1122.
+./drivers/net/xen-netback/interface.c:516:1-11: Use setup_timer function for function on line 517.
+./drivers/net/usb/catc.c:804:1-11: Use setup_timer function for function on line 805.
+./drivers/net/ethernet/smsc/epic100.c:745:1-11: Use setup_timer function for function on line 747.
+./drivers/net/ethernet/packetengines/hamachi.c:983:1-11: Use setup_timer function for function on line 985.
+./drivers/net/ethernet/packetengines/yellowfin.c:636:1-11: Use setup_timer function for function on line 638.
+./drivers/net/ethernet/cisco/enic/enic_main.c:2687:1-11: Use setup_timer function for function on line 2688.
+./drivers/net/ethernet/cisco/enic/enic_clsf.h:22:1-11: Use setup_timer function for function on line 23.
+./drivers/net/ethernet/qlogic/qla3xxx.c:3891:1-11: Use setup_timer function for function on line 3892.
+./drivers/net/ethernet/amd/amd8111e.c:1905:2-12: Use setup_timer function for function on line 1906.
+./drivers/net/ethernet/amd/a2065.c:737:1-11: Use setup_timer function for function on line 738.
+./drivers/net/ethernet/amd/sunlance.c:1463:1-11: Use setup_timer function for function on line 1464.
+./drivers/net/ethernet/amd/am79c961a.c:732:1-11: Use setup_timer function for function on line 733.
+./drivers/net/ethernet/amd/declance.c:1250:1-11: Use setup_timer function for function on line 1251.
+./drivers/net/ethernet/amd/pcnet32.c:1916:1-11: Use setup_timer function for function on line 1917.
+./drivers/net/ethernet/mellanox/mlx4/catas.c:280:1-11: Use setup_timer function for function on line 296.
+./drivers/net/ethernet/mellanox/mlx5/core/health.c:283:1-11: Use setup_timer function for function on line 287.
+./drivers/net/ethernet/dlink/sundance.c:914:1-11: Use setup_timer function for function on line 916.
+./drivers/net/ethernet/intel/i40evf/i40evf_main.c:2431:1-11: Use setup_timer function for function on line 2432.
+./drivers/net/ethernet/intel/ixgb/ixgb_main.c:509:1-11: Use setup_timer function for function on line 510.
+./drivers/net/ethernet/intel/e1000e/netdev.c:7214:1-11: Use setup_timer function for function on line 7215.
+./drivers/net/ethernet/intel/e1000e/netdev.c:7218:1-11: Use setup_timer function for function on line 7219.
+./drivers/net/ethernet/chelsio/cxgb/sge.c:2078:1-11: Use setup_timer function for function on line 2079.
+./drivers/net/ethernet/toshiba/spider_net.c:2279:1-11: Use setup_timer function for function on line 2280.
+./drivers/net/ethernet/toshiba/spider_net.c:2286:1-11: Use setup_timer function for function on line 2287.
+./drivers/net/ethernet/natsemi/ns83820.c:1651:1-11: Use setup_timer function for function on line 1652.
+./drivers/net/ethernet/natsemi/natsemi.c:1568:1-11: Use setup_timer function for function on line 1570.
+./drivers/net/ethernet/sis/sis900.c:1069:1-11: Use setup_timer function for function on line 1071.
+./drivers/net/ethernet/broadcom/tg3.c:11079:1-11: Use setup_timer function for function on line 11080.
+./drivers/net/ethernet/broadcom/b44.c:1480:1-11: Use setup_timer function for function on line 1482.
+./drivers/net/ethernet/broadcom/bnx2x/bnx2x_main.c:12423:1-11: Use setup_timer function for function on line 12425.
+./drivers/net/ethernet/broadcom/bcm63xx_enet.c:1873:1-11: Use setup_timer function for function on line 1874.
+./drivers/net/ethernet/broadcom/bcm63xx_enet.c:2345:1-11: Use setup_timer function for function on line 2346.
+./drivers/net/ethernet/broadcom/bcm63xx_enet.c:2772:1-11: Use setup_timer function for function on line 2773.
+./drivers/net/ethernet/broadcom/bnxt/bnxt.c:5777:1-11: Use setup_timer function for function on line 5778.
+./drivers/net/ethernet/broadcom/bnx2.c:8447:1-11: Use setup_timer function for function on line 8449.
+./drivers/net/ethernet/ti/netcp_ethss.c:3194:1-11: Use setup_timer function for function on line 3195.
+./drivers/net/ethernet/ti/cpsw_ale.c:732:1-11: Use setup_timer function for function on line 733.
+./drivers/net/ethernet/agere/et131x.c:3647:1-11: Use setup_timer function for function on line 3650.
+./drivers/net/ethernet/dec/tulip/de4x5.c:1151:1-11: Use setup_timer function for function on line 1152.
+./drivers/net/ethernet/dec/tulip/winbond-840.c:659:1-11: Use setup_timer function for function on line 661.
+./drivers/net/ethernet/dec/tulip/uli526x.c:495:1-11: Use setup_timer function for function on line 497.
+./drivers/net/ethernet/dec/tulip/de2104x.c:1997:1-11: Use setup_timer function for function on line 1999.
+./drivers/net/ethernet/dec/tulip/de2104x.c:1997:1-11: Use setup_timer function for function on line 2001.
+./drivers/net/ethernet/dec/tulip/dmfe.c:600:1-11: Use setup_timer function for function on line 602.
+./drivers/net/ethernet/realtek/atp.c:442:1-11: Use setup_timer function for function on line 444.
+./drivers/net/ethernet/realtek/r8169.c:8410:1-11: Use setup_timer function for function on line 8411.
+./drivers/net/ethernet/marvell/pxa168_eth.c:1523:1-11: Use setup_timer function for function on line 1524.
+./drivers/net/ethernet/fealnx.c:921:1-11: Use setup_timer function for function on line 922.
+./drivers/net/ethernet/tile/tilepro.c:1007:1-11: Use setup_timer function for function on line 1008.
+./drivers/net/ethernet/sun/sungem.c:2899:1-11: Use setup_timer function for function on line 2900.
+./drivers/net/ethernet/sun/niu.c:6783:2-12: Use setup_timer function for function on line 6785.
+./drivers/net/ethernet/sun/niu.c:6126:2-12: Use setup_timer function for function on line 6128.
+./drivers/net/ethernet/sun/cassini.c:5039:1-11: Use setup_timer function for function on line 5040.
+./drivers/net/ethernet/adi/bfin_mac.c:1682:1-11: Use setup_timer function for function on line 1683.
+./drivers/net/ethernet/3com/3c515.c:736:2-12: Use setup_timer function for function on line 738.
+./drivers/net/ethernet/stmicro/stmmac/stmmac_main.c:1630:1-11: Use setup_timer function for function on line 1632.
+./drivers/net/wireless/atmel/atmel.c:1592:1-11: Use setup_timer function for function on line 1595.
+./drivers/net/wireless/intel/iwlwifi/mvm/sta.c:1353:2-12: Use setup_timer function for function on line 1354.
+./drivers/net/wireless/intersil/hostap/hostap_hw.c:3229:1-11: Use setup_timer function for function on line 3230.
+./drivers/net/wireless/intersil/hostap/hostap_hw.c:3233:1-11: Use setup_timer function for function on line 3234.
+./drivers/net/wireless/intersil/hostap/hostap_ap.c:1193:1-11: Use setup_timer function for function on line 1195.
+./drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c:4119:1-11: Use setup_timer function for function on line 4120.
+./drivers/net/wireless/broadcom/brcm80211/brcmfmac/btcoex.c:383:1-11: Use setup_timer function for function on line 384.
+./drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c:3138:1-11: Use setup_timer function for function on line 3139.
+./drivers/net/wireless/ath/ath6kl/txrx.c:1760:1-11: Use setup_timer function for function on line 1761.
+./drivers/net/hamradio/6pack.c:630:1-11: Use setup_timer function for function on line 631.
+./drivers/net/appletalk/ltpc.c:1168:2-12: Use setup_timer function for function on line 1169.
+./drivers/net/appletalk/cops.c:427:6-16: Use setup_timer function for function on line 428.
+./drivers/net/slip/slip.c:767:1-11: Use setup_timer function for function on line 768.
+./drivers/net/slip/slip.c:770:1-11: Use setup_timer function for function on line 771.
+./drivers/net/arcnet/arcnet.c:405:2-12: Use setup_timer function for function on line 406.
+./drivers/net/can/usb/peak_usb/pcan_usb.c:801:1-11: Use setup_timer function for function on line 802.
+./drivers/net/can/sja1000/peak_pcmcia.c:695:1-11: Use setup_timer function for function on line 696.
+./drivers/net/can/grcan.c:1629:2-12: Use setup_timer function for function on line 1630.
+./drivers/net/can/grcan.c:1633:2-12: Use setup_timer function for function on line 1634.
+./drivers/net/dsa/mv88e6xxx.c:371:1-11: Use setup_timer function for function on line 372.
+./drivers/net/hippi/rrunner.c:1232:1-11: Use setup_timer function for function on line 1234.
+./drivers/net/eql.c:181:1-11: Use setup_timer function for function on line 182.
+./drivers/char/ipmi/ipmi_ssif.c:1616:1-11: Use setup_timer function for function on line 1617.
+./drivers/scsi/dc395x.c:860:1-11: Use setup_timer function for function on line 861.
+./drivers/scsi/esas2r/esas2r_main.c:1638:1-11: Use setup_timer function for function on line 1640.
+./drivers/scsi/bfa/bfad.c:722:1-11: Use setup_timer function for function on line 723.
+./drivers/scsi/libiscsi.c:2893:1-11: Use setup_timer function for function on line 2894.
+./drivers/scsi/bnx2fc/bnx2fc_fcoe.c:1916:3-13: Use setup_timer function for function on line 1919.
+./drivers/scsi/arcmsr/arcmsr_hba.c:852:1-11: Use setup_timer function for function on line 854.
+./drivers/scsi/arcmsr/arcmsr_hba.c:951:1-11: Use setup_timer function for function on line 953.
+./drivers/scsi/bnx2i/bnx2i_iscsi.c:1838:1-11: Use setup_timer function for function on line 1840.
+./drivers/scsi/bnx2i/bnx2i_iscsi.c:2056:1-11: Use setup_timer function for function on line 2058.
+./drivers/scsi/bnx2i/bnx2i_iscsi.c:1732:1-11: Use setup_timer function for function on line 1734.
+./drivers/scsi/qla4xxx/ql4_os.c:3964:1-11: Use setup_timer function for function on line 3966.
+./drivers/scsi/sym53c8xx_2/sym_glue.c:1354:1-11: Use setup_timer function for function on line 1355.
+./drivers/scsi/arm/fas216.c:2852:1-11: Use setup_timer function for function on line 2853.
+./drivers/scsi/ibmvscsi/ibmvscsi.c:927:1-11: Use setup_timer function for function on line 929.
+./drivers/scsi/ibmvscsi/ibmvfc.c:1420:1-11: Use setup_timer function for function on line 1423.
+./drivers/scsi/lpfc/lpfc_hbadisc.c:4208:1-11: Use setup_timer function for function on line 4209.
+./drivers/scsi/lpfc/lpfc_init.c:3345:1-11: Use setup_timer function for function on line 3346.
+./drivers/scsi/lpfc/lpfc_init.c:3349:1-11: Use setup_timer function for function on line 3350.
+./drivers/scsi/lpfc/lpfc_init.c:3353:1-11: Use setup_timer function for function on line 3354.
+./drivers/scsi/lpfc/lpfc_init.c:5127:1-11: Use setup_timer function for function on line 5128.
+./drivers/scsi/lpfc/lpfc_init.c:5130:1-11: Use setup_timer function for function on line 5131.
+./drivers/scsi/lpfc/lpfc_init.c:5136:1-11: Use setup_timer function for function on line 5137.
+./drivers/scsi/lpfc/lpfc_init.c:5140:1-11: Use setup_timer function for function on line 5141.
+./drivers/scsi/lpfc/lpfc_init.c:5144:1-11: Use setup_timer function for function on line 5145.
+./drivers/scsi/lpfc/lpfc_init.c:5148:1-11: Use setup_timer function for function on line 5149.
+./drivers/scsi/lpfc/lpfc_init.c:4952:1-11: Use setup_timer function for function on line 4953.
+./drivers/scsi/lpfc/lpfc_init.c:4958:1-11: Use setup_timer function for function on line 4959.
+./drivers/scsi/lpfc/lpfc_init.c:4962:1-11: Use setup_timer function for function on line 4963.
+./drivers/scsi/lpfc/lpfc_init.c:4966:1-11: Use setup_timer function for function on line 4967.
+./drivers/scsi/lpfc/lpfc_init.c:4970:1-11: Use setup_timer function for function on line 4971.
+./drivers/scsi/qla2xxx/qla_os.c:303:1-11: Use setup_timer function for function on line 305.
+./drivers/scsi/qla2xxx/qla_inline.h:252:1-11: Use setup_timer function for function on line 254.
+./drivers/scsi/ncr53c8xx.c:8360:1-11: Use setup_timer function for function on line 8361.
+./drivers/tty/n_gsm.c:1653:1-11: Use setup_timer function for function on line 1654.
+./drivers/tty/serial/mux.c:579:2-12: Use setup_timer function for function on line 580.
+./drivers/tty/serial/imx.c:2054:1-11: Use setup_timer function for function on line 2055.
+./drivers/tty/serial/8250/8250_core.c:523:2-12: Use setup_timer function for function on line 524.
+./drivers/tty/serial/max3100.c:790:1-11: Use setup_timer function for function on line 791.
+./drivers/tty/serial/sa1100.c:643:2-12: Use setup_timer function for function on line 644.
+./drivers/tty/serial/pnx8xxx_uart.c:669:2-12: Use setup_timer function for function on line 670.
+./drivers/tty/serial/sn_console.c:690:1-11: Use setup_timer function for function on line 691.
+./drivers/tty/serial/ifx6x60.c:1032:1-11: Use setup_timer function for function on line 1033.
+./drivers/hsi/clients/ssi_protocol.c:1079:1-11: Use setup_timer function for function on line 1084.
+./drivers/ide/ide-probe.c:1169:1-11: Use setup_timer function for function on line 1170.
+./drivers/input/keyboard/locomokbd.c:267:1-11: Use setup_timer function for function on line 268.
+./drivers/input/joystick/db9.c:612:1-11: Use setup_timer function for function on line 613.
+./drivers/input/joystick/turbografx.c:203:1-11: Use setup_timer function for function on line 204.
+./drivers/input/serio/hp_sdc.c:912:1-11: Use setup_timer function for function on line 914.
+./drivers/input/gameport/gameport.c:545:1-11: Use setup_timer function for function on line 546.
+./drivers/media/rc/imon.c:2316:2-12: Use setup_timer function for function on line 2317.
+./drivers/media/platform/sti/c8sectpfe/c8sectpfe-core.c:869:1-11: Use setup_timer function for function on line 870.
+./drivers/media/platform/s5p-mfc/s5p_mfc.c:1255:1-11: Use setup_timer function for function on line 1256.
+./drivers/media/radio/wl128x/fmdrv_common.c:1561:1-11: Use setup_timer function for function on line 1562.
+./drivers/media/radio/radio-cadet.c:312:1-11: Use setup_timer function for function on line 313.
+./drivers/media/radio/radio-cadet.c:323:1-11: Use setup_timer function for function on line 324.
+./drivers/media/common/saa7146/saa7146_vbi.c:368:1-11: Use setup_timer function for function on line 369.
+./drivers/media/common/saa7146/saa7146_video.c:1200:1-11: Use setup_timer function for function on line 1201.
+./drivers/media/pci/ttpci/av7110_ir.c:339:1-11: Use setup_timer function for function on line 340.
+./drivers/media/pci/saa7134/saa7134-ts.c:231:1-11: Use setup_timer function for function on line 232.
+./drivers/media/pci/saa7134/saa7134-vbi.c:189:1-11: Use setup_timer function for function on line 190.
+./drivers/media/pci/saa7134/saa7134-video.c:2138:1-11: Use setup_timer function for function on line 2139.
+./drivers/media/pci/bt8xx/bttv-driver.c:4029:1-11: Use setup_timer function for function on line 4030.
+./drivers/media/pci/ivtv/ivtv-driver.c:772:1-11: Use setup_timer function for function on line 773.
+./drivers/media/i2c/tvaudio.c:2004:1-11: Use setup_timer function for function on line 2014.
+./drivers/macintosh/smu.c:577:1-11: Use setup_timer function for function on line 578.
+./drivers/pci/hotplug/cpqphp_ctrl.c:1886:5-15: Use setup_timer function for function on line 1891.
+./drivers/pci/hotplug/cpqphp_core.c:664:2-12: Use setup_timer function for function on line 666.
+./drivers/md/bcache/stats.c:236:1-11: Use setup_timer function for function on line 238.
+./drivers/atm/ambassador.c:2270:1-11: Use setup_timer function for function on line 2271.
+./drivers/atm/idt77252.c:2135:1-11: Use setup_timer function for function on line 2136.
+./drivers/atm/idt77252.c:3641:1-11: Use setup_timer function for function on line 3642.
+./drivers/atm/firestream.c:1888:1-11: Use setup_timer function for function on line 1889.
+./drivers/atm/horizon.c:2798:1-11: Use setup_timer function for function on line 2799.
+./drivers/atm/nicstar.c:287:2-12: Use setup_timer function for function on line 289.
+./drivers/atm/lanai.c:1793:1-11: Use setup_timer function for function on line 1795.
+./drivers/atm/suni.c:328:2-12: Use setup_timer function for function on line 330.
+./drivers/block/hd.c:711:1-11: Use setup_timer function for function on line 712.
+./drivers/block/floppy.c:4213:2-12: Use setup_timer function for function on line 4214.
+./drivers/block/umem.c:743:1-11: Use setup_timer function for function on line 744.
+./drivers/block/DAC960.c:3079:6-16: Use setup_timer function for function on line 3082.
+./drivers/block/aoe/aoemain.c:31:2-12: Use setup_timer function for function on line 33.
+./drivers/block/aoe/aoedev.c:469:1-11: Use setup_timer function for function on line 470.
+./drivers/block/amiflop.c:1795:1-11: Use setup_timer function for function on line 1797.
+./drivers/block/amiflop.c:1800:2-12: Use setup_timer function for function on line 1802.
+./drivers/block/amiflop.c:1804:2-12: Use setup_timer function for function on line 1806.
+./drivers/block/amiflop.c:1812:1-11: Use setup_timer function for function on line 1814.
+./drivers/block/nbd.c:1081:2-12: Use setup_timer function for function on line 1082.
+./drivers/block/mg_disk.c:992:1-11: Use setup_timer function for function on line 993.
+./drivers/block/drbd/drbd_main.c:1939:1-11: Use setup_timer function for function on line 1943.
+./drivers/block/drbd/drbd_main.c:1940:1-11: Use setup_timer function for function on line 1945.
+./drivers/block/drbd/drbd_main.c:1941:1-11: Use setup_timer function for function on line 1947.
+./drivers/block/drbd/drbd_main.c:1942:1-11: Use setup_timer function for function on line 1949.
+./drivers/video/fbdev/mbx/mbxdebugfs.c:18:11-28: WARNING opportunity for simple_open, see also structure on line 184
+./drivers/video/fbdev/mbx/mbxdebugfs.c:18:11-28: WARNING opportunity for simple_open, see also structure on line 191
+./drivers/video/fbdev/mbx/mbxdebugfs.c:18:11-28: WARNING opportunity for simple_open, see also structure on line 198
+./drivers/video/fbdev/mbx/mbxdebugfs.c:18:11-28: WARNING opportunity for simple_open, see also structure on line 212
+./drivers/video/fbdev/mbx/mbxdebugfs.c:18:11-28: WARNING opportunity for simple_open, see also structure on line 205
+./drivers/video/fbdev/mbx/mbxdebugfs.c:18:11-28: WARNING opportunity for simple_open, see also structure on line 177
+./drivers/net/ethernet/chelsio/cxgb4/cxgb4_debugfs.c:2862:11-26: WARNING opportunity for simple_open, see also structure on line 2911
+./drivers/net/ethernet/ibm/ibmvnic.c:2780:11-31: WARNING opportunity for simple_open, see also structure on line 2988
+./drivers/net/ethernet/ibm/ibmvnic.c:2780:11-31: WARNING opportunity for simple_open, see also structure on line 2887
+./drivers/net/ethernet/ibm/ibmvnic.c:2780:11-31: WARNING opportunity for simple_open, see also structure on line 3039
+./drivers/net/ethernet/ibm/ibmvnic.c:2780:11-31: WARNING opportunity for simple_open, see also structure on line 2837
+./drivers/net/ethernet/ibm/ibmvnic.c:2780:11-31: WARNING opportunity for simple_open, see also structure on line 3092
+./drivers/net/ethernet/ibm/ibmvnic.c:2780:11-31: WARNING opportunity for simple_open, see also structure on line 2935
+./drivers/scsi/fnic/fnic_debugfs.c:122:11-31: WARNING opportunity for simple_open, see also structure on line 223
+./drivers/hsi/clients/cmt_speech.c:1278:12-18: WARNING: Consider using vma_pages helper on vma
+./mm/interval_tree.c:21:27-33: WARNING: Consider using vma_pages helper on v
+./drivers/base/dma-coherent.c:264:25-31: WARNING: Consider using vma_pages helper on vma
+./drivers/base/dma-mapping.c:250:34-40: WARNING: Consider using vma_pages helper on vma
+./drivers/misc/mic/scif/scif_mmap.c:617:22-28: WARNING: Consider using vma_pages helper on vma
+./drivers/misc/mic/scif/scif_mmap.c:555:22-28: WARNING: Consider using vma_pages helper on vma
+./drivers/xen/privcmd.c:585:20-26: WARNING: Consider using vma_pages helper on vma
+./drivers/xen/gntalloc.c:507:19-25: WARNING: Consider using vma_pages helper on vma
+./drivers/xen/gntdev.c:985:19-25: WARNING: Consider using vma_pages helper on vma
+./arch/metag/kernel/dma.c:345:19-25: WARNING: Consider using vma_pages helper on vma
+./arch/microblaze/kernel/dma.c:163:34-40: WARNING: Consider using vma_pages helper on vma
+./arch/mips/mm/dma-default.c:205:34-40: WARNING: Consider using vma_pages helper on vma
+./arch/alpha/kernel/pci-sysfs.c:258:12-18: WARNING: Consider using vma_pages helper on vma
+./arch/alpha/kernel/pci-sysfs.c:41:12-18: WARNING: Consider using vma_pages helper on vma
+./arch/powerpc/kvm/e500_mmu_host.c:379:16-22: WARNING: Consider using vma_pages helper on vma
+./arch/arm/mm/dma-mapping.c:858:36-42: WARNING: Consider using vma_pages helper on vma
+./drivers/gpu/drm/gma500/framebuffer.c:128:18-24: WARNING: Consider using vma_pages helper on vma
+./arch/arm64/mm/dma-mapping.c:309:36-42: WARNING: Consider using vma_pages helper on vma
+./drivers/thermal/ti-soc-thermal/ti-bandgap.c:1441:1-7: ERROR: missing clk_put; clk_get on line 1290 and execution via conditional on line 1298
+./drivers/nfc/pn533/usb.c:558:1-6: WARNING: invalid free of devm_ allocated data
+./arch/arm/plat-pxa/ssp.c:240:1-8: WARNING: invalid free of devm_ allocated data
+./arch/arm/plat-pxa/ssp.c:251:1-6: WARNING: invalid free of devm_ allocated data
+./block/badblocks.c:582:2-7: WARNING: invalid free of devm_ allocated data
+./drivers/mfd/syscon.c:109:1-8: WARNING: invalid free of devm_ allocated data
+./drivers/mfd/syscon.c:111:1-6: WARNING: invalid free of devm_ allocated data
+./drivers/pinctrl/freescale/pinctrl-mxs.c:140:2-7: WARNING: invalid free of devm_ allocated data
+./drivers/clk/clk-gpio.c:130:3-8: WARNING: invalid free of devm_ allocated data
+./drivers/clk/clk-gpio.c:155:2-7: WARNING: invalid free of devm_ allocated data
+./drivers/net/ethernet/ti/netcp_core.c:2073:2-7: WARNING: invalid free of devm_ allocated data
+./drivers/net/ethernet/ti/netcp_core.c:2168:2-7: WARNING: invalid free of devm_ allocated data
+./drivers/pwm/pwm-lp3943.c:87:1-6: WARNING: invalid free of devm_ allocated data
+./drivers/pwm/pwm-lp3943.c:56:3-8: WARNING: invalid free of devm_ allocated data
+./drivers/reset/reset-sunxi.c:115:1-6: WARNING: invalid free of devm_ allocated data
+./drivers/power/avs/smartreflex.c:1005:2-26: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/video/fbdev/omap2/omapfb/dss/core.c:141:2-26: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/dma-buf/dma-buf.c:927:2-26: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/thunderbolt/ctl.c:534:2-18: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./lib/sg_pool.c:152:3-18: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./lib/sg_pool.c:154:3-21: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./lib/debugobjects.c:1107:3-21: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./arch/x86/kvm/mmu.c:5036:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./arch/x86/kvm/mmu.c:5038:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./arch/arm/common/dmabounce.c:562:2-18: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./arch/arm/common/dmabounce.c:564:2-18: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./arch/sh/kernel/dwarf.c:1013:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./arch/sh/kernel/dwarf.c:1015:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./block/bio-integrity.c:503:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./block/bio-integrity.c:506:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./block/blk-core.c:642:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./block/elevator.c:851:3-21: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./block/bio.c:1852:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./block/bio.c:1855:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/acpi/custom_method.c:96:2-16: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ocfs2/super.c:1791:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ocfs2/super.c:1795:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ocfs2/super.c:1799:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ocfs2/super.c:1772:3-21: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ocfs2/super.c:1774:3-21: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ocfs2/super.c:1776:3-21: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ocfs2/uptodate.c:637:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ocfs2/dlm/dlmmaster.c:418:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ocfs2/dlm/dlmlock.c:81:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ocfs2/aops.c:1372:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/logfs/logfs.h:732:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/dlm/lockspace.c:678:3-8: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/dlm/memory.c:90:4-9: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/dlm/memory.c:42:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/dlm/memory.c:44:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/btrfs/free-space-cache.c:2126:3-8: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/btrfs/free-space-cache.c:3613:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/misc/sgi-xp/xpc_partition.c:102:4-9: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/jbd2/journal.c:2642:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/jbd2/journal.c:2644:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/jbd2/journal.c:2279:3-21: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ext4/crypto.c:157:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ext4/crypto.c:163:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ext4/crypto.c:166:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ext4/extents_status.c:165:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/ext4/mballoc.c:2540:3-21: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/xfs/kmem.h:115:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/xen/xen-scsiback.c:631:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/gfs2/main.c:200:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/gfs2/main.c:203:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/gfs2/main.c:206:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/gfs2/main.c:209:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/gfs2/main.c:212:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/gfs2/main.c:215:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./fs/gfs2/main.c:218:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/s390/scsi/zfcp_aux.c:252:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/s390/scsi/zfcp_aux.c:254:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/s390/scsi/zfcp_aux.c:256:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/s390/scsi/zfcp_aux.c:258:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/s390/scsi/zfcp_aux.c:260:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/s390/scsi/zfcp_aux.c:262:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/s390/scsi/zfcp_aux.c:264:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/gpu/drm/amd/powerplay/hwmgr/functiontables.c:81:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/gpu/drm/amd/amdgpu/amdgpu_cgs.c:1057:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/gpu/drm/omapdrm/dss/core.c:141:2-26: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/platform/x86/intel_ips.c:1322:2-26: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/usb/mon/mon_text.c:728:2-16: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/net/wireless/marvell/mwifiex/debugfs.c:1047:2-16: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/scsi.c:868:3-8: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/ipr.c:9295:2-18: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/libfc/fc_fcp.c:2220:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/aic7xxx/aic79xx_core.c:6217:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/aic7xxx/aic79xx_core.c:6219:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/aic7xxx/aic79xx_core.c:6221:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/aic7xxx/aic79xx_core.c:3685:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/aic7xxx/aic79xx_core.c:6149:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/aic7xxx/aic7xxx_core.c:4961:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/aic7xxx/aic7xxx_core.c:4553:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/aic7xxx/aic7xxx_core.c:4555:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/aic7xxx/aic7xxx_core.c:2204:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/aic7xxx/aic7xxx_core.c:4485:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/aic94xx/aic94xx_init.c:664:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/aic94xx/aic94xx_init.c:668:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/aic94xx/aic94xx_init.c:588:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/qla4xxx/ql4_os.c:4150:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/qla4xxx/ql4_os.c:4155:2-18: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/qla4xxx/ql4_os.c:4162:2-18: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/csiostor/csio_init.c:161:2-26: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/lpfc/lpfc_bsg.c:1263:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/lpfc/lpfc_mem.c:236:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/lpfc/lpfc_init.c:11161:3-18: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/qla2xxx/qla_os.c:3816:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/qla2xxx/qla_os.c:3848:2-18: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/qla2xxx/qla_os.c:3870:2-18: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/qla2xxx/qla_os.c:3873:2-18: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/qla2xxx/qla_os.c:3876:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/scsi/qla2xxx/qla_os.c:6003:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/tty/serial/pch_uart.c:1861:2-16: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/firmware/google/gsmi.c:914:2-18: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/media/usb/uvc/uvc_debugfs.c:135:2-26: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/md/bcache/super.c:1351:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/md/bcache/super.c:1353:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/md/bcache/super.c:1355:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/md/bcache/request.c:1154:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/md/bcache/bset.c:1120:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/block/aoe/aoedev.c:289:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/block/mtip32xx/mtip32xx.c:2771:2-26: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/block/drbd/drbd_main.c:2030:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/block/drbd/drbd_main.c:2032:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/block/drbd/drbd_main.c:2034:2-17: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/block/drbd/drbd_main.c:2036:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/block/drbd/drbd_main.c:2038:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/block/drbd/drbd_main.c:2040:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/block/drbd/drbd_main.c:2042:2-20: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/block/skd_main.c:3951:2-7: WARNING: NULL check before freeing functions like kfree, debugfs_remove, debugfs_remove_recursive or usb_free_urb is not needed. Maybe consider reorganizing relevant code to avoid passing NULL values.
+./drivers/mtd/maps/sc520cdp.c:246:3-9: ERROR: missing iounmap; ioremap on line 242 and execution via conditional on line 244
+./drivers/memstick/host/jmb38x_ms.c:904:2-8: ERROR: missing iounmap; ioremap on line 882 and execution via conditional on line 902
+./drivers/bus/mvebu-mbus.c:1115:2-8: ERROR: missing iounmap; ioremap on line 1108 and execution via conditional on line 1113
+./arch/mips/txx9/generic/setup.c:969:1-7: ERROR: missing iounmap; ioremap on line 943 and execution via conditional on line 958
+./drivers/net/ethernet/8390/ax88796.c:950:1-7: ERROR: missing iounmap; ioremap on line 918 and execution via conditional on line 933
+^CMakefile:1538: recipe for target 'coccicheck' failed
+make: *** [coccicheck] Error 1
+
+$
+
