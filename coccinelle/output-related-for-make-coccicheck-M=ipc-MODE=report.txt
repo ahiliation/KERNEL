@@ -1,0 +1,9 @@
+$sudo make coccicheck M=ipc/  MODE=report
+
+Please check for false positives in the output before submitting a patch.
+When using "patch" mode, carefully review the patch before submitting it.
+
+ipc/sem.c:362:4-10: preceding lock on line 343
+ipc/util.c:592:2-8: preceding lock on line 583
+$
+
