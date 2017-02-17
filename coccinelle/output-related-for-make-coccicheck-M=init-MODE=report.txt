@@ -1,0 +1,16 @@
+$sudo make coccicheck M=init/  MODE=report
+
+Please check for false positives in the output before submitting a patch.
+When using "patch" mode, carefully review the patch before submitting it.
+
+find: ‘arch/x86/include/generated/uapi’: No such file or directory
+find: ‘arch/x86/include/generated’: No such file or directory
+find: ‘include/generated/uapi’: No such file or directory
+find: ‘arch/x86/include/generated/uapi’: No such file or directory
+find: ‘arch/x86/include/generated’: No such file or directory
+find: ‘include/generated/uapi’: No such file or directory
+find: ‘arch/x86/include/generated/uapi’: No such file or directory
+find: ‘arch/x86/include/generated’: No such file or directory
+find: ‘include/generated/uapi’: No such file or directory
+$sudo make coccicheck M=kernel/  MODE=report
+
