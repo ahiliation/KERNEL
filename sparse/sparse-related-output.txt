@@ -1,0 +1,42 @@
+$sudo make C=2
+arch/x86/Makefile:133: stack-protector enabled but compiler support broken
+Makefile:677: Cannot use CONFIG_CC_STACKPROTECTOR_STRONG: -fstack-protector-strong not supported by compiler
+  CHK     include/config/kernel.release
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  CHECK   arch/x86/purgatory/purgatory.c
+arch/x86/purgatory/purgatory.c:21:15: warning: symbol 'backup_dest' was not declared. Should it be static?
+arch/x86/purgatory/purgatory.c:22:15: warning: symbol 'backup_src' was not declared. Should it be static?
+arch/x86/purgatory/purgatory.c:23:15: warning: symbol 'backup_sz' was not declared. Should it be static?
+arch/x86/purgatory/purgatory.c:25:4: warning: symbol 'sha256_digest' was not declared. Should it be static?
+arch/x86/purgatory/purgatory.c:27:19: warning: symbol 'sha_regions' was not declared. Should it be static?
+arch/x86/purgatory/purgatory.c:42:5: warning: symbol 'verify_sha256_digest' was not declared. Should it be static?
+arch/x86/purgatory/purgatory.c:61:6: warning: symbol 'purgatory' was not declared. Should it be static?
+  CC      arch/x86/purgatory/purgatory.o
+  AS      arch/x86/purgatory/stack.o
+  AS      arch/x86/purgatory/setup-x86_64.o
+  CHECK   arch/x86/purgatory/sha256.c
+  CC      arch/x86/purgatory/sha256.o
+  AS      arch/x86/purgatory/entry64.o
+  CHECK   arch/x86/purgatory/string.c
+arch/x86/purgatory/../boot/string.c:18:5: warning: symbol 'memcmp' was not declared. Should it be static?
+arch/x86/purgatory/../boot/string.c:26:5: warning: symbol 'strcmp' was not declared. Should it be static?
+arch/x86/purgatory/../boot/string.c:42:5: warning: symbol 'strncmp' was not declared. Should it be static?
+arch/x86/purgatory/../boot/string.c:58:8: warning: symbol 'strnlen' was not declared. Should it be static?
+arch/x86/purgatory/../boot/string.c:69:14: warning: symbol 'atou' was not declared. Should it be static?
+arch/x86/purgatory/../boot/string.c:99:20: warning: symbol 'simple_strtoull' was not declared. Should it be static?
+arch/x86/purgatory/../boot/string.c:128:8: warning: symbol 'strlen' was not declared. Should it be static?
+arch/x86/purgatory/../boot/string.c:142:6: warning: symbol 'strstr' was not declared. Should it be static?
+  CC      arch/x86/purgatory/string.o
+  LD      arch/x86/purgatory/purgatory.ro
+  BIN2C   arch/x86/purgatory/kexec-purgatory.c
+  CC      kernel/bounds.s
+kernel/bounds.c:1:0: error: code model kernel does not support PIC mode
+ /*
+ 
+Kbuild:45: recipe for target 'kernel/bounds.s' failed
+make[1]: *** [kernel/bounds.s] Error 1
+Makefile:1032: recipe for target 'prepare0' failed
+make: *** [prepare0] Error 2
+$
+
