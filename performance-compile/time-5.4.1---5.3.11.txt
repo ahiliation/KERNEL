@@ -1,0 +1,15 @@
+arch/x86/kernel/cpu/mce/core.o: warning: objtool: mce_panic()+0x11b: unreachable instruction
+kernel/exit.o: warning: objtool: __x64_sys_exit_group()+0x14: unreachable instruction
+net/core/skbuff.o: warning: objtool: skb_push.cold()+0x15: unreachable instruction
+awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+awk: ./arch/x86/tools/gen-insn-attr-x86.awk:260: warning: regexp escape sequence `\:' is not a known regexp operator
+awk: ./arch/x86/tools/gen-insn-attr-x86.awk:350: (FILENAME=./arch/x86/lib/x86-opcode-map.txt FNR=41) warning: regexp escape sequence `\&' is not a known regexp operator
+
+real	104m16.500s
+user	51m11.444s
+sys	5m1.046s
