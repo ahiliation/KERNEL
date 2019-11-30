@@ -1,0 +1,13 @@
+arch/x86/kernel/cpu/mce/core.o: warning: objtool: mce_panic()+0x11b: unreachable instruction
+kernel/exit.o: warning: objtool: __x64_sys_exit_group()+0x14: unreachable instruction
+net/core/skbuff.o: warning: objtool: skb_push.cold()+0x15: unreachable instruction
+awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+awk: ./lib/raid6/unroll.awk:16: warning: regexp escape sequence `\#' is not a known regexp operator
+
+real	124m44.923s
+user	56m26.547s
+sys	5m35.978s
