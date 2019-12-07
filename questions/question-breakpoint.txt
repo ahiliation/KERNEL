@@ -1,0 +1,14 @@
+1. How to understand the code for testing "breakdown property in debugging" in the linux kernel ?
+
+1a. read the code
+--------------------------------------------------------------------------
+
+--- may be read the code and try to modify it ---
+
+2. What are the similar capabilities of the kernel that can be tested ?
+
+2a. may be you will find out by reading the code for testing "breakdown property in debugging" in the linux kernel.
+
+--- may be you should modify several code which are for testing purpose
+    may be from this program you should find the structure of a program
+    that can be  written for test purpose. ---
