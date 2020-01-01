@@ -3,3 +3,7 @@
 https://stackoverflow.com/questions/6896121/how-to-delete-a-commited-patch-from-local-git-repository
 
 2. To remove the last commit from git, you can simply run git reset --hard HEAD^
+
+3. How to switch my git repository to a particular commit ?
+
+https://stackoverflow.com/questions/4940054/how-can-i-switch-my-git-repository-to-a-particular-commit
