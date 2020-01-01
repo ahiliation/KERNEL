@@ -1,0 +1,5 @@
+1. How to delete a commited patch from local git repository?
+
+https://stackoverflow.com/questions/6896121/how-to-delete-a-commited-patch-from-local-git-repository
+
+2. To remove the last commit from git, you can simply run git reset --hard HEAD^
