@@ -7,3 +7,11 @@ https://stackoverflow.com/questions/6896121/how-to-delete-a-commited-patch-from-
 3. How to switch my git repository to a particular commit ?
 
 https://stackoverflow.com/questions/4940054/how-can-i-switch-my-git-repository-to-a-particular-commit
+
+4.How to delete a local branch using git ?
+
+   git  branch -d branch_name
+   git branch -D branch_name
+
+https://koukia.ca/delete-a-local-and-a-remote-git-branch-61df0b10d323
+
